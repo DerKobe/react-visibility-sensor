@@ -88,7 +88,11 @@ module.exports = React.createClass({
       return this.state;
     }
 
-    rect = el.getBoundingClientRect();
+    try {
+      rect = el.getBoundingClientRect();
+    } catch() {
+      return this.state;
+    }
 
     if (this.props.containment) {
       containmentRect = this.props.containment.getBoundingClientRect();
