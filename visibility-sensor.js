@@ -90,7 +90,7 @@ module.exports = React.createClass({
 
     try {
       rect = el.getBoundingClientRect();
-    } catch() {
+    } catch(error) {
       return this.state;
     }
 
